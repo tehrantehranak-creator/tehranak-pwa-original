@@ -63,6 +63,12 @@
 </head>
 <body class="font-vazirmatn bg-[#0F172A] text-white antialiased">
     <div id="app" class="min-h-screen">
+        <!-- Dynamic Island (Voice Assistant) -->
+        <div id="dynamicIsland" class="fixed top-2 left-1/2 transform -translate-x-1/2 w-[180px] h-[36px] bg-black rounded-full z-[60] overflow-hidden shadow-[0_0_20px_rgba(147,51,234,0.35)] border border-white/10 flex items-center justify-center gap-2 px-3 select-none cursor-pointer hover:w-[190px] transition-all duration-500">
+            <span class="text-[10px] font-extrabold text-gray-300 tracking-[0.15em]" id="islandLogo">TEHRA</span><span class="text-[10px] font-extrabold text-green-500 tracking-[0.15em]">NAK</span>
+            <div class="w-1.5 h-1.5 bg-green-500 rounded-full"></div>
+        </div>
+
         <!-- Header -->
         <header class="flex justify-between items-center px-6 pt-12 pb-4 sticky top-0 z-40 bg-[#0F172A]/80 backdrop-blur-md">
             <!-- Right Side (Start in RTL): Search -->
@@ -169,20 +175,10 @@
             </div>
 
             <!-- Other Tab Contents -->
-            <div id="otherContent" class="hidden p-4 text-center text-gray-400">
+            <div id="otherContent" class="hidden p-4">
                 <!-- Will be populated by JavaScript based on active tab -->
             </div>
         </main>
-
-        <!-- Floating Action Button -->
-        <div id="fab" class="fixed bottom-20 left-1/2 transform -translate-x-1/2 z-50">
-            <button class="bg-gradient-to-tr from-purple-600 to-blue-500 w-14 h-14 rounded-full flex items-center justify-center shadow-lg shadow-purple-500/40 border-4 border-[#0f172a] text-white transition-transform hover:scale-105 active:scale-95">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
-                </svg>
-            </button>
-            <span class="text-[10px] font-bold text-gray-400 mt-1 block text-center">ثبت</span>
-        </div>
 
         <!-- Bottom Navigation -->
         <nav class="fixed bottom-4 left-4 right-4 max-w-[400px] mx-auto bg-[#1E293B]/95 backdrop-blur-xl border border-white/10 rounded-[24px] px-2 py-2 z-50 shadow-2xl shadow-black/50 flex justify-between items-end h-[75px]">
@@ -204,14 +200,14 @@
                 <span class="text-[9px] font-medium opacity-80">املاک</span>
             </button>
             
-            <div class="relative -top-4 flex flex-col items-center w-1/6">
-                <button class="bg-gradient-to-tr from-purple-600 to-blue-500 w-14 h-14 rounded-full flex items-center justify-center shadow-lg shadow-purple-500/40 border-4 border-[#0f172a] text-white transition-transform hover:scale-105 active:scale-95" data-tab="add">
-                    <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24">
+            <button class="flex flex-col items-center justify-center w-1/6 pb-1 transition-all duration-300 text-gray-400" data-tab="add">
+                <div class="mb-1 transition-all duration-300">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
                     </svg>
-                </button>
-                <span class="text-[10px] font-bold text-gray-400 mt-1">ثبت</span>
-            </div>
+                </div>
+                <span class="text-[9px] font-medium opacity-80">ثبت</span>
+            </button>
             
             <button class="flex flex-col items-center justify-center w-1/6 pb-1 transition-all duration-300 text-gray-400" data-tab="clients">
                 <div class="mb-1 transition-all duration-300">
